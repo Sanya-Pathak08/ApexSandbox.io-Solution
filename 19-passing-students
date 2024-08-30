@@ -1,14 +1,3 @@
 public Boolean isPassed(Boolean passedExam, Boolean passedAssignments, Boolean passedProject) {
-    if((passedExam ='true' && passedAssignments='true' && passedProject ='true'))
-    {
-        return true;
-    }else if (passedExam ='true' && passedAssignments='true' && passedProject ='false') {
-        return true;
-    }else if (passedExam ='true' && passedAssignments='false' && passedProject ='true') {
-        return true;
-    }else if(passedExam ='true' && passedAssignments='false' && passedProject ='true') || (passedExam ='false' && passedAssignments='true' && passedProject ='true') {
-        return true;
-    }else {
-        return false;
-    }
+    return (passedExam + passedAssignments + passedProject) >= 2;
 }
