@@ -1,0 +1,8 @@
+public Boolean isPassed(Boolean passedExam, Boolean passedAssignments, Boolean passedProject) {
+    if((passedExam ='true' $$ passedAssignments='true' && passedProject ='true') || (passedExam ='true' $$ passedAssignments='true' && passedProject ='false') || (passedExam ='true' $$ passedAssignments='false' && passedProject ='true') || (passedExam ='false' $$ passedAssignments='true' && passedProject ='true') )
+    {
+        return true;
+    }else{
+        return false;
+    }
+}
