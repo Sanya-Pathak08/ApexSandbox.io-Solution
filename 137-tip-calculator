@@ -1,6 +1,6 @@
 public Decimal computeTip(Decimal total, Integer percent) {
     if(percent >=0 && percent <=100){        
-        total = total * (percent / 100);
+        total =Decimal.parseDecimal(total * (percent / 100);) 
         return total;
     }
     
