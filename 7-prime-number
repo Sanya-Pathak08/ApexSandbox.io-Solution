@@ -1,14 +1,15 @@
 public Boolean isPrime(Integer num) {
     //code here
+    Boolean isprime=false;
     for(i=0; i<=n/2 ;i++){
-        if(math.mod(num,i) ==0){
+        if(math.mod(num,i) !=0){
             isprime=true;
         }
     }
     if(isprime==true){
-        return true;
+        return false;
     }
     else{
-        return false;
+        return true;
     }
 }
