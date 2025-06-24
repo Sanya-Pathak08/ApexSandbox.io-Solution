@@ -1,0 +1,7 @@
+public String convert15to18DigitId(String fifteenDigit)
+{
+    //code here
+    String res = CASESAFEID(fifteenDigit);
+    return res;
+
+}
