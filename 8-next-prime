@@ -7,7 +7,7 @@ public Integer nextPrime(Integer num) {
             if(math.mod(i,j) !=0){
                 result = i;                
             }
-            return result;
+            return i;
         }
     }
 }
