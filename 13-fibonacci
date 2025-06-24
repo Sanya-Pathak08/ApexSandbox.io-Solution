@@ -11,8 +11,8 @@ public Integer fibonacci(Integer n) {
             first =last;
             last = res;
         }
-        
+        return res; 
     }
-    return res; 
+    
     
 }
