@@ -3,12 +3,12 @@ public Integer nextPrime(Integer num) {
     
     Boolean isPrime=false;
     Integer prime;
-    if(num<2){
+    if(num < 2){
         return 2;
     }
-    for(Integer i = num+1; ;i++){
-        for(integer j=2; i<i ;i++){
-            if(math.mod(num,i) ==0){
+    for(Integer i = num+1;  ;i++){
+        for(integer j=2; j<i ;j++){
+            if(math.mod(i,j) ==0){
                 isPrime =false;
                 break; 
             }
