@@ -1,17 +1,7 @@
 public String convert15to18DigitId(String fifteenDigit)
 {
-    String suffix = '';
-    for (Integer i = 0; i < 3; i++) {
-        Integer flags = 0;
-        for (Integer j = 0; j < 5; j++) {
-            Integer index = i * 5 + j;
-            if (Character.isUpperCase(id15.charAt(index))) {
-                flags += (1 << j);
-            }
-        }
-        suffix += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.charAt(flags);
-    }
-    
-    return id15 + suffix;
+   Id recordId = Id.valueOf(fifteenDigit); 
+    return String.valueOf(recordId);  
+
 
 }
