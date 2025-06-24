@@ -1,6 +1,6 @@
 public Id insertStudent(String name, String email) {
     // code here
-    apxio_Student__c apxStu =new apxio_Student__c();
+    apxio__Student__c  apxStu =new apxio__Student__c();
     apxStu.Name = name;
     apxStu.apxio__Email__c = email ;
     Insert apxStu;
