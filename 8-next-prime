@@ -1,6 +1,6 @@
 public Integer nextPrime(Integer num) {
     //code here
-    Boolean isPrime=true;
+    Boolean isPrime=false;
     Integer prime;
     for(Integer i = num+1; ;i++){
         for(integer j=2; i<i ;i++){
@@ -9,7 +9,7 @@ public Integer nextPrime(Integer num) {
                 break; 
             }
         }
-        if(isPrime ==true){
+        if(isPrime == true){
             prime =i;
             break;
         }
