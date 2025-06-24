@@ -1,11 +1,13 @@
 public Integer nextPrime(Integer num) {
     //code here
+    Integer result;
     for(integer i =num+1;;i++)
     { 
         for(integer j=num; j>num ;i++){
             if(math.mod(num,j) !=0){
-             return j;
+             result= j;
             }
         }
     }
+    return result;
 }
