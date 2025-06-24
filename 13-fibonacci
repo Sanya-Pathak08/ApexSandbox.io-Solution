@@ -1,9 +1,17 @@
 public Integer fibonacci(Integer n) {
     //code here
-    Integer k=1;
-    for(Integer i=3; i<=n; i++){
-        Integer k+=i;
+    if(n==1 || n==2){
+        return 1;
+    }else{
+        Integer first =1;
+        Integer last =1;
+        for(Integer i=3; i<=n; i++){
+            Integer res = first + last;
+            first =last;
+            last = res;
+        }
         
     }
-    return k;
+    return res; 
+    
 }
