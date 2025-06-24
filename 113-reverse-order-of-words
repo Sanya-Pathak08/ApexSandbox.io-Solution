@@ -1,0 +1,12 @@
+public String reverseWordsInASentence(String sentence){
+    //your flawless code here
+    String[] temp = pattern.split(sentence); 
+    String result = ""; 
+    for (int i = 0; i < temp.length; i++) { 
+            if (i == temp.length - 1) 
+                result = temp[i] + result; 
+            else
+                result = " " + temp[i] + result; 
+        } 
+        return result; 
+}
