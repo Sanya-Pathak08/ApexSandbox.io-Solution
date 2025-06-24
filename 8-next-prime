@@ -1,11 +1,19 @@
 public Integer nextPrime(Integer num) {
     //code here
+    Boolean isPrime=true;
+    Integer prime;
     for(Integer i = num+1; ;i++){
         for(integer j=2; i<i ;i++){
             if(math.mod(num,i) ==0){
-                return i; 
+                isPrime =false;
+                break; 
             }
+        }
+        if(isPrime ==true){
+            prime =i;
+            break;
         }
        
     }
+    return prime;
 }
