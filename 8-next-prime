@@ -1,13 +1,20 @@
 public Integer nextPrime(Integer num) {
     //code here
-    Integer result;
-    for(integer i=num+1; ;i++)
-    { 
-        for(integer j=2; j>i ;j++){
-            if(math.mod(i,j) !=0){
-                result = i;                
-            }
+    for(Integer i = num+1; ;i++){
+        if(isPrime(i))
+        {
             return i;
         }
     }
+
+    
+    
 }
+public boolean isPrime(integre num){
+        for(integer i=2; i<num ;i++){
+            if(math.mod(num,i) ==0){
+            return false;
+            }
+        }
+        return true;
+    }
