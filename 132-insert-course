@@ -3,10 +3,10 @@ public Id insertCourse(String name, String details, Integer credits) {
     apxio__Course__c  apxCourse =new apxio__Course__c();
     apxCourse.Name = name;
     apxCourse.apxio__Course_Details__c  = details;
-    if(apxCourse.getValue(apxio__Credits__c) == credits)
+    if(credits > 0 && credits <5 )
         apxCourse.apxio__Credits__c = Integer.valueOf(credits);
     else
-        apxCourse.apxio__Credits__c =null;
+        apxCourse.apxio__Credits__c = null;
     insert apxCourse;
     return apxCourse.Id;
 }
