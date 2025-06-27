@@ -2,8 +2,11 @@ public Id insertCourse(String name, String details, Integer credits) {
     // code here
     apxio__Course__c  apxCourse =new apxio__Course__c();
     apxCourse.Name = name;
-    apxCourse.apxio__Course_Details__c  =details;
-    apxCourse.apxio__Credits__c = credits;
+    apxCourse.apxio__Course_Details__c  = details;
+    if(apxCourse.apxio__Credits__c.contains(credits))
+        apxCourse.apxio__Credits__c = String.valueof(credits);
+    else
+        apxCourse.apxio__Credits__c =null;
     insert apxCourse;
     return apxCourse.Id;
 }
