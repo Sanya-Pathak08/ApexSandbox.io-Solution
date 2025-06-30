@@ -14,7 +14,7 @@ public void createCourseAndClass(String name, String description) {
         
         insert apxcourse;
 
-        if(description.length()>255){
+        if(description != null && description.length()>255){
             description =description.substring(0, 255);
         }
 
