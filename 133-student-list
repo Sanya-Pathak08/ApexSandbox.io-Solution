@@ -8,6 +8,7 @@ public void insertStudents(List<String> studentNames, List<String> studentEmails
             apxStu.apxio__Email__c  = studentEmails[i];
             apxStuList.add(apxStu);
         }
-        insert apxStuList;
+        if(!apxStuList.isEmpty())
+            insert apxStuList;
     }
 }
