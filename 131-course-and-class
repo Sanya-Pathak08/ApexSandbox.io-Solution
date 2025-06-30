@@ -6,7 +6,12 @@ public void createCourseAndClass(String name, String description) {
     else{
         apxio__Course__c  apxcourse =new apxio__Course__c ();
         apxcourse.Name = name;
-        apxcourse.apxio__Course_Details__c = description;
+        if(description == null || description == ' '){
+            description = null;
+        }else{
+            apxcourse.apxio__Course_Details__c = description;
+        }
+        
         insert apxcourse;
 
         if(description.length()>255){
