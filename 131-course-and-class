@@ -1,6 +1,9 @@
 public void createCourseAndClass(String name, String description) {
     // code here
-    if(!name.isEmpty() && !description.isEmpty()){
+    if(name == null || name ==' ' && description == null || description ==' '){
+        system.debug('Name and Description is blank');
+    }
+    else{
         apxio__Course__c  apxcourse =new apxio__Course__c ();
         apxcourse.Name = name;
         apxcourse.apxio__Course_Details__c = description;
