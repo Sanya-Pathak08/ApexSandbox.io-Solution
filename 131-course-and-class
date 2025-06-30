@@ -1,18 +1,20 @@
 public void createCourseAndClass(String name, String description) {
     // code here
-    apxio__Course__c  apxcourse =new apxio__Course__c ();
-    apxcourse.Name = name;
-    apxcourse.apxio__Course_Details__c = description;
-    insert apxcourse;
+    if(!name.isEmpty() && !description.isEmpty()){
+        apxio__Course__c  apxcourse =new apxio__Course__c ();
+        apxcourse.Name = name;
+        apxcourse.apxio__Course_Details__c = description;
+        insert apxcourse;
 
-    if(description.length()>255){
-        description =description.substring(0, 255);
+        if(description.length()>255){
+            description =description.substring(0, 255);
+        }
+
+        apxio__Class__c apxcls= new apxio__Class__c();
+        apxcls.Name = Name;
+        apxcls.apxio__Description__c = description;
+        apxcls.apxio__Course__c =apxcourse.Id;
+        insert apxcls;
     }
-
-    apxio__Class__c apxcls= new apxio__Class__c();
-    apxcls.Name = Name;
-    apxcls.apxio__Description__c = description;
-    apxcls.apxio__Course__c =apxcourse.Id;
-    insert apxcls;
 
 }
