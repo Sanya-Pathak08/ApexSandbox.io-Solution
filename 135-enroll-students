@@ -1,0 +1,47 @@
+public void enrollStudents(List<String> emails, String className) {
+    if (emails == null || emails.isEmpty() || String.isBlank(className)) {
+        return; // No processing needed
+    }
+
+    // Fetch the class with the given name
+    List<apxio__Class__c> classList = [
+        SELECT Id 
+        FROM apxio__Class__c 
+        WHERE Name = :className 
+        LIMIT 1
+    ];
+
+    if (classList.isEmpty()) {
+        return; // Class not found
+    }
+
+    Id classId = classList[0].Id;
+
+    // Fetch students whose email is in the provided list
+    List<apxio__Student__c> students = [
+        SELECT Id, apxio__Email__c 
+        FROM apxio__Student__c 
+        WHERE apxio__Email__c IN :emails
+    ];
+
+    // Map student email to ID for quick lookup
+    Map<String, Id> emailToStudentId = new Map<String, Id>();
+    for (apxio__Student__c s : students) {
+        emailToStudentId.put(s.apxio__Email__c, s.Id);
+    }
+
+    // Create enrollment records for matched students
+    List<apxio__Class_Enrollment__c> enrollments = new List<apxio__Class_Enrollment__c>();
+    for (String email : emails) {
+        if (emailToStudentId.containsKey(email)) {
+            apxio__Class_Enrollment__c enrollment = new apxio__Class_Enrollment__c();
+            enrollment.apxio__Student__c = emailToStudentId.get(email);
+            enrollment.apxio__Offered_Class__c = classId;
+            enrollments.add(enrollment);
+        }
+    }
+
+    if (!enrollments.isEmpty()) {
+        insert enrollments;
+    }
+}
