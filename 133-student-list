@@ -3,7 +3,7 @@ public void insertStudents(List<String> studentNames, List<String> studentEmails
     if(studentNames.size()>=0){
         apxio__Student__c apxStu =new apxio__Student__c();
         List<apxio__Student__c> apxStuList = new List<apxio__Student__c>();
-        for(integer i=0; i<= studentNames.size() ;i++){
+        for(integer i=0; i< studentNames.size() ;i++){
             apxStu.Name = studentNames[i];
             apxStu.apxio__Email__c  = studentEmails[i];
             apxStuList.add(apxStu);
