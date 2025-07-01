@@ -4,11 +4,11 @@ public List<Account> checkAccounts(List<Account> accounts)
     if(accounts.size >= 0){
         for(Account acc:accounts){
             if(acc.isBlank(BillingCity)){
-               return throw new AccountException('Invalid BillingCity');
+               throw new AccountException('Invalid BillingCity');
             }
         }
     }else{
-        return throw new IllegalArgumentException('accounts should not be null');
+        throw new IllegalArgumentException('accounts should not be null');
     }
     return accounts;
     
